@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import { useNavigate } from "react-router-dom";
 
 export default function Verifyemail() {
     const inputRefs = useRef([]);
@@ -6,17 +7,23 @@ export default function Verifyemail() {
   const handleChange = (e, index) => {
     const { value } = e.target;
     if (value.length === 1) {
-      // Move focus to the next input if the current input has a value
+      
       if (index < inputRefs.current.length - 1) {
         inputRefs.current[index + 1].focus();
       }
     } else if (value.length === 0) {
-      // Move focus to the previous input if the current input is cleared
+     
       if (index > 0) {
         inputRefs.current[index - 1].focus();
       }
     }
   };
+  const navigate = useNavigate();
+
+
+    const handleverify = () => {
+        navigate("/editprofile");
+      };
   return (
     <div className="flex flex-col justify-between items-center min-h-screen bg-gradient-to-b from-gray-800 to-black text-white px-4 py-6">
       <div className="flex flex-col items-center">
@@ -35,7 +42,7 @@ export default function Verifyemail() {
           ))}
         </div>
       </div>
-      <button className="w-full max-w-sm px-6 py-3 text-white bg-blue-600 rounded-full hover:bg-blue-700 transition duration-300">
+      <button  onClick={handleverify} className="w-full max-w-sm px-6 py-3 text-white bg-blue-600 rounded-full hover:bg-blue-700 transition duration-300">
         Verify Your Email
       </button>
     </div>

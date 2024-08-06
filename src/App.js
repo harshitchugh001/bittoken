@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import Home from './components/Home';
 import Verifyemail from './components/Verifyemail';
+import EditProfile from './components/EditProfile';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Routes>
           <Route key="Home" path='/' exact element={<Home></Home>} />
           <Route path='/verify' exact element={<Verifyemail></Verifyemail>}></Route>
-          {/* <Route path='/sample' exact element={<Sample></Sample>}></Route> */}
+          <Route path='/editprofile' exact element={<EditProfile></EditProfile>}></Route>
           {/* <Route></Route> */}
         </Routes>
       </div>
