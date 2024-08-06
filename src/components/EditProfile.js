@@ -1,13 +1,13 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 export default function EditProfile() {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
 
-    const handleSignUp = () => {
-        navigate("/verify");
-      };
+    // const handleSignUp = () => {
+    //     navigate("/verify");
+    //   };
   return (
     <div className="flex flex-col justify-center items-center min-h-screen bg-gradient-to-b from-gray-800 to-black text-white px-4 py-6">
     <div className="w-full max-w-md bg-gray-900 p-6 rounded-lg shadow-lg">
