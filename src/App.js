@@ -17,7 +17,7 @@ function App() {
 
         <Routes>
           <Route key="Home" path='/' exact element={<Home></Home>} />
-          <Route path='/verify' exact element={<Verifyemail></Verifyemail>}></Route>
+          <Route path="/verify/:email" element={<Verifyemail />} />
           <Route path='/editprofile' exact element={<EditProfile></EditProfile>}></Route>
           {/* <Route></Route> */}
         </Routes>
