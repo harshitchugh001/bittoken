@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { getCookie } from './Helper/Helper';
 import { useNavigate } from "react-router-dom";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function EditProfile() {
     const [fullName, setFullName] = useState('');
@@ -26,7 +28,7 @@ export default function EditProfile() {
             if (response.status === 200) {
                 // Redirect to home page if profile data is fetched successfully
                 navigate("/home");
-            }     
+            }
             console.log('Profile data fetched successfully:', response.data);
         } catch (error) {
             console.error('Error fetching profile data:', error.response?.data || error.message);
@@ -36,7 +38,7 @@ export default function EditProfile() {
 
     useEffect(() => {
         fetchProfile();
-    }, []);
+    });
 
     const handleContinue = async () => {
         try {
@@ -47,7 +49,7 @@ export default function EditProfile() {
                 {
                     name: fullName,
                     username: username,
-                    dob: dob,  
+                    dob: dob,
                 },
                 {
                     headers: {
@@ -55,8 +57,16 @@ export default function EditProfile() {
                     },
                 }
             );
-            console.log('Profile updated successfully:', response.data);
-            alert('Profile updated successfully!');
+            if (response.status === 200) {
+                // Redirect to home page if profile data is fetched successfully
+                console.log('Profile updated successfully:', response.data);
+                toast.success(response.data.message, {
+                    onClose: () =>  navigate("/home") 
+                  }); 
+               
+            }
+
+
         } catch (error) {
             console.error('Error updating profile:', error.response?.data || error.message);
             alert('An error occurred while updating the profile.');
@@ -111,6 +121,17 @@ export default function EditProfile() {
                     </button>
                 </form>
             </div>
+            <ToastContainer
+        position="top-center"
+        autoClose={1000} 
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
         </div>
     );
 }
