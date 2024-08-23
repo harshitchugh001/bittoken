@@ -4,7 +4,15 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        neonBlue: '#00e0ff',  // Custom neon blue
+        black: '#000000',
+        blue: {
+          900: '#000080', // Dark blue background for cards and buttons
+        }
+      },
+    },
   },
   plugins: [],
 }

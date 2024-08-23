@@ -2,7 +2,7 @@ import React from 'react'
 // import { useNavigate } from "react-router-dom";
 
 export default function EditProfile() {
-    // const navigate = useNavigate();
+    // const navigate = useNavigate();8
 
 
     // const handleSignUp = () => {
