@@ -9,6 +9,7 @@ import Verifyemail from './components/Verifyemail';
 import EditProfile from './components/EditProfile';
 import { useState, useEffect } from 'react';
 import Loader from './components/Loader/Loader';
+import axios from 'axios';
 
 function App() {
   // Loader state
@@ -22,11 +23,18 @@ function App() {
     return () => clearTimeout(timer); // Cleanup timer on unmount
   }, []);
 
+  useEffect(() => {
+    async function load() {
+      const response = await axios.get(`${process.env.REACT_APP_API}`);
+      console.log(response);
+    }
+    load();
+  }, [])
+
   return (
     <>
       <Router>
         <div className="App">
-          {/* Show loader if loading is true */}
           {loading ? (
             <Loader />
           ) : (
