@@ -60,7 +60,7 @@ export default function Login() {
           Sign Up
         </button>
 
-        {/* Google login button */}
+        
         <Google informParent={informParent} />
 
       </div>

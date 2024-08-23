@@ -24,7 +24,7 @@ const Google = ({ informParent = f => f }) => {
 
     return (
         <GoogleOAuthProvider clientId={`${process.env.REACT_APP_GOOGLE_CLIENT_ID}`}>
-            <div className="pb-3">
+            <div className="pb-3 ">
                 <GoogleLogin
                     clientId={`${process.env.REACT_APP_GOOGLE_CLIENT_ID}`}
                     onSuccess={responseGoogle}

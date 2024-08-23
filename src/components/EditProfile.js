@@ -27,7 +27,12 @@ export default function EditProfile() {
 
             if (response.status === 200) {
                 // Redirect to home page if profile data is fetched successfully
+                if(response.data.user.fullName){
                 navigate("/home");
+                }
+                else{
+                    setLoading(false);
+                }
             }
             console.log('Profile data fetched successfully:', response.data);
         } catch (error) {
@@ -58,8 +63,9 @@ export default function EditProfile() {
                 }
             );
             if (response.status === 200) {
-                // Redirect to home page if profile data is fetched successfully
-                console.log('Profile updated successfully:', response.data);
+                
+                console.log('Profile updated successfully:', response.data.user.fullName);
+                
                 toast.success(response.data.message, {
                     onClose: () =>  navigate("/home") 
                   }); 
