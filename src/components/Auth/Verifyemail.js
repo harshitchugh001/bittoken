@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { setCookie } from './Helper/Helper';
+import { setCookie } from '../Helper/Helper';
 
 export default function Verifyemail() {
   const [otp, setOtp] = useState('');

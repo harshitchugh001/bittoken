@@ -4,11 +4,12 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import Home from './components/Home';
-import Verifyemail from './components/Verifyemail';
+import Login from './components/Auth/Login';
+import Verifyemail from './components/Auth/Verifyemail';
 import EditProfile from './components/EditProfile';
 import { useState, useEffect } from 'react';
 import Loader from './components/Loader/Loader';
+import axios from 'axios';
 
 function App() {
   // Loader state
@@ -22,16 +23,23 @@ function App() {
     return () => clearTimeout(timer); 
   }, []);
 
+  useEffect(() => {
+    async function load() {
+      const response = await axios.get(`${process.env.REACT_APP_API}`);
+      console.log(response);
+    }
+    load();
+  }, [])
+
   return (
     <>
       <Router>
         <div className="App">
-          {/* Show loader if loading is true */}
           {loading ? (
             <Loader />
           ) : (
             <Routes>
-              <Route key="Home" path='/' exact element={<Home />} />
+              <Route key="Login" path='/' exact element={<Login />} />
               <Route path="/verify/:email" element={<Verifyemail />} />
               <Route path='/editprofile' exact element={<EditProfile />} />
             </Routes>
