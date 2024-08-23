@@ -12,24 +12,28 @@ const Google = ({ informParent = f => f }) => {
             url: `${process.env.REACT_APP_API}/api/google-login`,
             data: { idToken: credential }
         })
-        .then(response => {
-            console.log('GOOGLE SIGNIN SUCCESS', response);
-            // inform parent component
-            informParent(response);
-        })
-        .catch(error => {
-            console.log('GOOGLE SIGNIN ERROR', error.response);
-        });
+            .then(response => {
+                console.log('GOOGLE SIGNIN SUCCESS', response);
+                // inform parent component
+                informParent(response);
+            })
+            .catch(error => {
+                console.log('GOOGLE SIGNIN ERROR', error.response);
+            });
     };
 
     return (
         <GoogleOAuthProvider clientId={`${process.env.REACT_APP_GOOGLE_CLIENT_ID}`}>
             <div className="pb-3">
                 <GoogleLogin
+                    clientId={`${process.env.REACT_APP_GOOGLE_CLIENT_ID}`}
                     onSuccess={responseGoogle}
+                    onFailure={responseGoogle}
                     onError={() => {
                         console.log('Login Failed');
                     }}
+                    uxMode="redirect" // Add this line
+                    redirectUri={`${window.location.origin}/editprofile`}
                 />
             </div>
         </GoogleOAuthProvider>
