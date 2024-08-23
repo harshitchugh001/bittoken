@@ -4,8 +4,8 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import Home from './components/Home';
-import Verifyemail from './components/Verifyemail';
+import Login from './components/Auth/Login';
+import Verifyemail from './components/Auth/Verifyemail';
 import EditProfile from './components/EditProfile';
 import { useState, useEffect } from 'react';
 import Loader from './components/Loader/Loader';
@@ -39,7 +39,7 @@ function App() {
             <Loader />
           ) : (
             <Routes>
-              <Route key="Home" path='/' exact element={<Home />} />
+              <Route key="Login" path='/' exact element={<Login />} />
               <Route path="/verify/:email" element={<Verifyemail />} />
               <Route path='/editprofile' exact element={<EditProfile />} />
             </Routes>
