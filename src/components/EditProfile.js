@@ -1,18 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { getCookie } from './Helper/Helper';
+import { useNavigate } from "react-router-dom";
 
 export default function EditProfile() {
     const [fullName, setFullName] = useState('');
     const [username, setUsername] = useState('');
     const [dob, setDob] = useState('');
-    // const token = getCookie('token');
+    const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
+
+    const fetchProfile = async () => {
+        try {
+            const token = getCookie('token');
+
+            const response = await axios.get(
+                `${process.env.REACT_APP_API}/api/get-profile`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
+
+            if (response.status === 200) {
+                // Redirect to home page if profile data is fetched successfully
+                navigate("/home");
+            }     
+            console.log('Profile data fetched successfully:', response.data);
+        } catch (error) {
+            console.error('Error fetching profile data:', error.response?.data || error.message);
+            setLoading(false); // Stop loading if there is an error
+        }
+    };
+
+    useEffect(() => {
+        fetchProfile();
+    }, []);
 
     const handleContinue = async () => {
         try {
             const token = getCookie('token');
 
-            console.log(token);
             const response = await axios.post(
                 `${process.env.REACT_APP_API}/api/add-profile`,
                 {
@@ -28,12 +57,16 @@ export default function EditProfile() {
             );
             console.log('Profile updated successfully:', response.data);
             alert('Profile updated successfully!');
-
         } catch (error) {
             console.error('Error updating profile:', error.response?.data || error.message);
             alert('An error occurred while updating the profile.');
         }
     };
+
+    // Show loading message while fetching profile data
+    if (loading) {
+        return <div className="flex justify-center items-center min-h-screen">Loading...</div>;
+    }
 
     return (
         <div className="flex flex-col justify-center items-center min-h-screen bg-gradient-to-b from-gray-800 to-black text-white px-4 py-6">

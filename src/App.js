@@ -10,6 +10,7 @@ import EditProfile from './components/EditProfile';
 import { useState, useEffect } from 'react';
 import Loader from './components/Loader/Loader';
 import axios from 'axios';
+import Home from './components/Home/Home'
 
 function App() {
   // Loader state
@@ -42,6 +43,7 @@ function App() {
               <Route key="Login" path='/' exact element={<Login />} />
               <Route path="/verify/:email" element={<Verifyemail />} />
               <Route path='/editprofile' exact element={<EditProfile />} />
+              <Route path='/home' exact element={<Home></Home>} />
             </Routes>
           )}
         </div>
