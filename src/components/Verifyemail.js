@@ -27,7 +27,7 @@ export default function Verifyemail() {
 
   const handleVerify = async () => {
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API}/verify`, { userEmail: email, otp });
+      const response = await axios.post(`${process.env.REACT_APP_API}/api/verify`, { userEmail: email, otp });
       if (response.status === 200) {
         toast.success('Email verified successfully!');
         navigate("/editprofile");

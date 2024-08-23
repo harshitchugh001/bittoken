@@ -11,7 +11,7 @@ export default function Home() {
 
   const handleSignUp = async () => {
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API}/signup`, { userEmail: email });
+      const response = await axios.post(`${process.env.REACT_APP_API}/api/signup`, { userEmail: email });
 
       if (response.status === 200) { 
         toast.success(response.data.message, {
