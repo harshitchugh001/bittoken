@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { setCookie } from './Helper/Helper';
 
 export default function Verifyemail() {
   const [otp, setOtp] = useState('');
@@ -30,6 +31,7 @@ export default function Verifyemail() {
       const response = await axios.post(`${process.env.REACT_APP_API}/api/verify`, { userEmail: email, otp });
       if (response.status === 200) {
         console.log(response,"response")
+        setCookie('token', response.data.token);
         toast.success('Email verified successfully!');
         navigate("/editprofile");
       } else {

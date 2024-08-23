@@ -4,7 +4,7 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import Home from './components/Home/Home';
+import Home from './components/Home';
 import Verifyemail from './components/Verifyemail';
 import EditProfile from './components/EditProfile';
 import { useState, useEffect } from 'react';
@@ -17,9 +17,9 @@ function App() {
   // Simulate loading effect
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLoading(false); // After 2 seconds, hide the loader
-    }, 2000);
-    return () => clearTimeout(timer); // Cleanup timer on unmount
+      setLoading(false); 
+    }, 5000);
+    return () => clearTimeout(timer); 
   }, []);
 
   return (
