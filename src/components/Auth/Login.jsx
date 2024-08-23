@@ -79,9 +79,10 @@ export default function Login() {
 
   // Function to inform parent about Google login success
   const informParent = (response) => {
-    authenticate(response, () => {
-      isAuth() && isAuth().role === 'admin' ? navigate('/admin') : navigate('/private');
-    });
+    // authenticate(response, () => {
+    //   isAuth() && isAuth().role === 'admin' ? navigate('/admin') : navigate('/private');
+    // });
+    navigate('/editprofile');
   };
 
   // Handle signup with email
