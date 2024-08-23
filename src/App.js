@@ -5,7 +5,7 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import Home from './components/Home';
+import Home from './components/Home/Home';
 import Verifyemail from './components/Verifyemail';
 import EditProfile from './components/EditProfile';
 
