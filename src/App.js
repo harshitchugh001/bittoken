@@ -11,6 +11,10 @@ import { useState, useEffect } from 'react';
 import Loader from './components/Loader/Loader';
 import axios from 'axios';
 import Home from './components/Home/Home'
+import Wallet from './components/wallet/Wallet';
+import Friends from './components/Friends/Friends';
+import Tasks from './components/Tasks/Tasks';
+import News from './components/News/News'
 
 function App() {
   // Loader state
@@ -44,6 +48,10 @@ function App() {
               <Route path="/verify/:email" element={<Verifyemail />} />
               <Route path='/editprofile' exact element={<EditProfile />} />
               <Route path='/home' exact element={<Home></Home>} />
+              <Route path="/wallet" element={<Wallet></Wallet>} />
+              <Route path='/friends' exact element={<Friends></Friends>} />
+              <Route path='/tasks' exact element={<Tasks></Tasks>} />
+              <Route path='/news' exact element={<News></News>} />
             </Routes>
           )}
         </div>
