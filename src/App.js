@@ -12,9 +12,9 @@ import Loader from './components/Loader/Loader';
 import axios from 'axios';
 import Home from './components/Home/Home'
 import Wallet from './components/wallet/Wallet';
-import Friends from './components/Friends/Friends';
+import Mine from './components/Mine/Mine';
 import Tasks from './components/Tasks/Tasks';
-import News from './components/News/News'
+import Profile from './components/Profile/Profile'
 
 function App() {
   // Loader state
@@ -49,9 +49,9 @@ function App() {
               <Route path='/editprofile' exact element={<EditProfile />} />
               <Route path='/home' exact element={<Home></Home>} />
               <Route path="/wallet" element={<Wallet></Wallet>} />
-              <Route path='/friends' exact element={<Friends></Friends>} />
+              <Route path='/mine' exact element={<Mine></Mine>} />
               <Route path='/tasks' exact element={<Tasks></Tasks>} />
-              <Route path='/news' exact element={<News></News>} />
+              <Route path='/Profile' exact element={<Profile></Profile>} />
             </Routes>
           )}
         </div>

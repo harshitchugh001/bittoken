@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom'; // Import useLocation
-import { Wallet, Handshake, House, ListChecks, Newspaper } from 'lucide-react';
+import { Wallet, Pickaxe, House, ListChecks, UserPen } from 'lucide-react';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -18,11 +18,11 @@ const Navbar = () => {
         <p className="text-sm">Wallet</p>
       </div>
       <div
-        className={`flex flex-col items-center w-16 ${isActive('/friends') ? 'text-white bg-neonBlue rounded-lg p-2' : 'text-neonBlue'}`}
-        onClick={() => navigate('/friends')}
+        className={`flex flex-col items-center w-16 ${isActive('/mine') ? 'text-white bg-neonBlue rounded-lg p-2' : 'text-neonBlue'}`}
+        onClick={() => navigate('/mine')}
       >
-        <Handshake />
-        <p className="text-sm">Friends</p>
+        <Pickaxe />
+        <p className="text-sm">mine</p>
       </div>
       <div
         className={`flex flex-col items-center w-16 ${isActive('/') ? 'text-white bg-neonBlue rounded-lg p-2' : 'text-neonBlue'}`}
@@ -39,11 +39,11 @@ const Navbar = () => {
         <p className="text-sm">Tasks</p>
       </div>
       <div
-        className={`flex flex-col items-center w-16 ${isActive('/news') ? 'text-white bg-neonBlue rounded-lg p-2' : 'text-neonBlue'}`}
-        onClick={() => navigate('/news')}
+        className={`flex flex-col items-center w-16 ${isActive('/profile') ? 'text-white bg-neonBlue rounded-lg p-2' : 'text-neonBlue'}`}
+        onClick={() => navigate('/profile')}
       >
-        <Newspaper />
-        <p className="text-sm">News</p>
+        <UserPen />
+        <p className="text-sm">Profile</p>
       </div>
     </nav>
   );
