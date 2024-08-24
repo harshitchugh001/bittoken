@@ -24,12 +24,12 @@ export default function Profile() {
             </div>
             <div className="flex-grow p-4">
                 <div className="flex justify-center items-center mt-10">
-                    <div className="bg-gradient-to-b p-6 rounded-lg text-center text-neonBlue">
-                        <h1 className="text-4xl font-bold">Profile</h1>
+                    <div className="bg-gradient-to-b p-6 rounded-lg text-center text-neonBlue animate-bounce">
+                        <h1 className="text-4xl font-bold animate-text">Profile</h1>
                     </div>
                 </div>
 
-                <div className="flex flex-col items-center mt-10">
+                <div className="flex flex-col items-center mt-10 animate-bounce">
                     <img
                         src="https://via.placeholder.com/150" // Replace with user profile image URL
                         alt="User"
@@ -40,7 +40,7 @@ export default function Profile() {
                 </div>
 
                 <div className="mt-8">
-                    <div className="bg-gradient-to-b p-4 rounded-lg text-center text-white">
+                    <div className="bg-gradient-to-b p-4 rounded-lg text-center text-white animate-text">
                         <h2 className="text-xl font-bold">Social Media</h2>
                         <ul className="mt-4 space-y-2">
                             <li><strong>Email:</strong> {userProfile.email}</li>

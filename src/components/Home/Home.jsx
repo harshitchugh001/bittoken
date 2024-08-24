@@ -14,10 +14,10 @@ const Home = () => {
         <Logout />
       </div>
       <div className="flex-grow p-6 mt-3 ">
-        <div className="flex justify-center items-center mt-15 p-6">
+        <div className="flex justify-center items-center mt-15 p-6 animate-bounce">
           <div className="bg-blue-900 p-6 rounded-lg text-center text-neonBlue">
-            <h1 className="text-4xl font-bold">GRAB</h1>
-            <p className="text-xl mt-2">0.04883 BITTOKEN</p>
+            <h1 className="text-4xl font-bold animate-text">GRAB</h1>
+            <p className="text-xl mt-2 animate-text">0.04883 BITTOKEN</p>
           </div>
         </div>
 

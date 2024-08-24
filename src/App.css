@@ -36,3 +36,129 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes slide-in {
+  0% { transform: translateY(-20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes hover {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+.animate-hover {
+  background-size: 200% 200%;
+  animation: hover 10s ease infinite;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.8s ease-out;
+}
+
+.bg-gradient-to-b {
+  background: linear-gradient(180deg, var(--tw-gradient-stops));
+}
+
+.table-auto {
+  width: 100%;
+}
+
+.text-neonBlue {
+  color: #00f1ff; /* Replace with your neon blue color */
+}
+
+.text-gray-300 {
+  color: #d1d5db; /* Light gray color for text */
+}
+
+
+@keyframes slide-in {
+  0% { transform: translateY(-20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.5s ease-out;
+}
+
+.text-neonBlue {
+  color: #00f1ff; /* Replace with your neon blue color */
+}
+
+.bg-neonBlue {
+  background-color: #00f1ff; /* Replace with your neon blue color */
+}
+
+nav {
+  background: linear-gradient(135deg, #000000, #1a1a1a); /* Dark gradient background */
+}
+
+nav div {
+  transition: all 0.3s ease;
+}
+
+nav div:hover {
+  background: rgba(0, 241, 255, 0.2); /* Light hover effect */
+  border-radius: 12px;
+}
+
+.text-2xl {
+  font-size: 1.5rem; /* Increase icon size */
+}
+
+.transition-transform {
+  transition: transform 0.3s ease;
+}
+
+.transform:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-30px);
+  }
+  60% {
+      transform: translateY(-15px);
+  }
+}
+
+@keyframes slide-in {
+  0% { transform: translateY(-20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes text-slide-in {
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.8s ease-out;
+}
+
+.animate-text {
+  animation: text-slide-in 1s ease-out;
+}
+
+.text-neonBlue {
+  color: #00f1ff; /* Replace with your neon blue color */
+}
+
+.bg-neonBlue {
+  background-color: #00f1ff; /* Replace with your neon blue color */
+}
+
+nav {
+  background: linear-gradient(135deg, #000000, #1a1a1a); /* Dark gradient background */
+}
